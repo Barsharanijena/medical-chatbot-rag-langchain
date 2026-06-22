@@ -10,13 +10,13 @@ from src.prompt import *
 import os
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='template')
 
 
 load_dotenv()
 
-PINECONE_API_KEY=os.environ.get('PINECONE_API_KEY')
-OPENAI_API_KEY=os.environ.get('OPENAI_API_KEY')
+PINECONE_API_KEY=os.environ.get('pinecone_api_key')
+OPENAI_API_KEY=os.environ.get('openai_api_key')
 
 os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
